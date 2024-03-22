@@ -6,8 +6,13 @@ import streamlit.components.v1 as components
 def home_page():
     centered_title = """
     <h1 style="text-align: center;">Deteksi Pneumonia Menggunakan CNN</h1>
-    ![Pneumonia Image](https://www.gavi.org/sites/default/files/vaccineswork/2022/Thumbnail/Pneumonia-picture-1_h2.jpg)
-    **Source:** Global Burden of Disease, 2019. [https://www.healthdata.org/gbd/2019](https://www.healthdata.org/gbd/2019)
+
+    <div style="text-align: center;">
+        <img src="https://www.gavi.org/sites/default/files/vaccineswork/2022/Thumbnail/Pneumonia-picture-1_h2.jpg" alt="Pneumonia Image" />
+    </div>
+    
+   <p style="text-align: center;"><strong>Source:</strong> Global Burden of Disease, 2019. <a href="https://www.healthdata.org/gbd/2019">https://www.healthdata.org/gbd/2019</a></p>
+
     """
     st.markdown(centered_title, unsafe_allow_html=True)
 
