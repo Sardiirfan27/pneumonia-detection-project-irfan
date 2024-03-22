@@ -8,7 +8,7 @@ def home_page():
     <h1 style="text-align: center;">Deteksi Pneumonia Menggunakan CNN</h1>
 
     <div style="text-align: center;">
-        <img src="https://www.gavi.org/sites/default/files/vaccineswork/2022/Thumbnail/Pneumonia-picture-1_h2.jpg" alt="Pneumonia Image" width="400"/>
+        <img src="https://www.gavi.org/sites/default/files/vaccineswork/2022/Thumbnail/Pneumonia-picture-1_h2.jpg" alt="Pneumonia Image" width="330"/>
     </div>
     
    <p style="text-align: center;"><strong>Source:</strong> Global Burden of Disease, 2019. <a href="https://www.healthdata.org/gbd/2019">https://www.healthdata.org/gbd/2019</a></p>
@@ -36,6 +36,7 @@ def home_page():
     Penggunaan Convolutional Neural Networks (CNN) memainkan peran kunci dalam proyek prediksi penyakit pneumonia berbasis citra medis. CNN dirancang khusus untuk mengekstraksi pola dari data spasial, seperti citra, dan telah terbukti sangat efektif dalam tugas-tugas untuk pemodelan prediktif. 
     Oleh sebab itu pada proyek ini saya akan mencoba membuat proyek Prediksi Pneumonia dengan pemodalan CNN serta melakukan beberapa uji coba arsitektur CNN dan penerapan transfer learning untuk mendapatkan hasil yang bagus.
 
+    
     """
     st.markdown(markdown_text)
 
