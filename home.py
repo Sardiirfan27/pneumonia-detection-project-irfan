@@ -15,10 +15,7 @@ def home_page():
     <p>Pneumonia komuniti atau community-acquired pneumonia (CAP) merupakan pneumonia yang didapat di masyarakat, di mana infeksi terjadi di luar fasilitas pelayanan kesehatan. 
     Pneumonia sendiri didefinisikan sebagai inflamasi parenkim paru yang disebabkan oleh infeksi mikroorganisme patogen, seperti bakteri, virus, jamur, dan parasit; serta pajanan bahan kimia ke parenkim paru.<a id='#ref1' href=#ref style ="color :#003f88;">[1]</a>
     </p>
-    <p>Insidensi CAP di dunia berada dalam rentang 1,5 sampai 14 kasus per 1000 orang per tahun. 
-    Di negara berkembang, CAP memiliki angka morbiditas dan mortalitas yang tinggi, serta mengakibatkan tingginya angka rawat inap terutama pada orang tua berusia 65 sampai 79 tahun.<a id='#ref2' href=#ref style ="color :#003f88;">[2]</a>
 
-    </p>
     """
     st.markdown(paragraph, unsafe_allow_html=True)
 
