@@ -36,9 +36,14 @@ def home_page():
     Penggunaan Convolutional Neural Networks (CNN) memainkan peran kunci dalam proyek prediksi penyakit pneumonia berbasis citra medis. CNN dirancang khusus untuk mengekstraksi pola dari data spasial, seperti citra, dan telah terbukti sangat efektif dalam tugas-tugas untuk pemodelan prediktif. 
     Oleh sebab itu pada proyek ini saya akan mencoba membuat proyek Prediksi Pneumonia dengan pemodalan CNN serta melakukan beberapa uji coba arsitektur CNN dan penerapan transfer learning untuk mendapatkan hasil yang bagus.
 
-    
     """
     st.markdown(markdown_text)
+
+    markdown_text = """
+    <br>
+    <br>
+    """
+    st.markdown(markdown_text,unsafe_allow_html=True)
 
 
 
