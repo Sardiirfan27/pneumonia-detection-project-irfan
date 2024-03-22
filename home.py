@@ -8,7 +8,7 @@ def home_page():
     <h1 style="text-align: center;">Deteksi Pneumonia Menggunakan CNN</h1>
 
     <div style="text-align: center;">
-        <img src="https://www.gavi.org/sites/default/files/vaccineswork/2022/Thumbnail/Pneumonia-picture-1_h2.jpg" alt="Pneumonia Image" />
+        <img src="https://www.gavi.org/sites/default/files/vaccineswork/2022/Thumbnail/Pneumonia-picture-1_h2.jpg" alt="Pneumonia Image" width="400"/>
     </div>
     
    <p style="text-align: center;"><strong>Source:</strong> Global Burden of Disease, 2019. <a href="https://www.healthdata.org/gbd/2019">https://www.healthdata.org/gbd/2019</a></p>
