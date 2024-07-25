@@ -7,3 +7,6 @@ Untuk melihat notebook dari projec ini anda dapat mengunjungi link berikut ini:
 Untuk melihat  Hasil deployment anda dapat mengunjungi link berikut:
 
 [streamlit app - Pneumonia Detection](https://pneumonia-detection-irfan.streamlit.app/)
+
+Uji coba prediksi gambar dari link berikut:
+https://www.itnonline.com/sites/default/files/GettyImages-115203637.jpg
