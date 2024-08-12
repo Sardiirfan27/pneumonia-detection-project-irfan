@@ -13,21 +13,36 @@ interpreter.allocate_tensors()
 # Function to preprocess image without load_img
 def load_and_preprocess_image(image):
     #img_inf = img.load_img(image, target_size=(224, 224))  # Sesuaikan target_size dengan ukuran yang digunakan saat pelatihan
-    img_inf= image.resize((224,224))
-    img_array = img.img_to_array(img_inf)
-    #st.write(img_array.shape)
-    img_array = img_array / 255.0  # Normalisasi nilai piksel menjadi [0, 1]
-    img_array = np.expand_dims(img_array, axis=0)
-    # st.write(img_array.shape)
-    return img_array
+    try:
+        # Memeriksa mode gambar dan konversi jika grayscale
+        if image.mode == "L":
+            image = image.convert("RGB")
+
+        # Resize gambar menjadi ukuran yang diinginkan (sesuaikan dengan ukuran yang digunakan saat pelatihan model)
+        image = image.resize((224, 224))
+        img_array = np.asarray(image) # Konversi gambar menjadi array numpy
+        img_array = img_array / 255.0 # Normalisasi nilai piksel menjadi [0, 1]
+
+        # Menambahkan dimensi batch (untuk memenuhi kebutuhan input model)
+        img_array = np.expand_dims(img_array, axis=0)
+
+        return img_array
+
+    except Exception as e:
+        print("Error:", str(e))
+        return None
 
 # Function to make prediction
 def binary_predict_image(interpreter, image, threshold=0.5):
-    input_details = interpreter.get_input_details()
-    output_details = interpreter.get_output_details()
-
     # Load and preprocess image
     input_data = load_and_preprocess_image(image)
+    if input_data is not None:
+        pass
+    else:
+        print("Preprocessing image failed.")
+    
+    input_details = interpreter.get_input_details()
+    output_details = interpreter.get_output_details()
 
     # Set input tensor
     interpreter.set_tensor(input_details[0]['index'], input_data)
