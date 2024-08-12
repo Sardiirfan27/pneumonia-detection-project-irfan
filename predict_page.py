@@ -63,6 +63,7 @@ def main():
             
             if uploaded_file is not None:
                 image = Image.open(uploaded_file)
+                st.write(image)
             
                 st.image(image, caption="Gambar yang diunggah", width=250)
                 if st.button("Prediksi"):
@@ -80,6 +81,7 @@ def main():
             if url:
                 try:
                     image = Image.open(BytesIO(requests.get(url).content))
+                    st.write(image)
                     st.image(image, caption="Gambar dari URL", width=250)
                     if st.button("Prediksi"):
                         predicted_class, confidence_category = binary_predict_image(interpreter, image)
