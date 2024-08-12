@@ -14,9 +14,9 @@ interpreter.allocate_tensors()
 def load_and_preprocess_image(image):
     #img_inf = img.load_img(image, target_size=(224, 224))  # Sesuaikan target_size dengan ukuran yang digunakan saat pelatihan
     try:
-        # Memeriksa mode gambar dan konversi jika grayscale
-        if image.mode == "L":
-            image = image.convert("RGB")
+        # # Memeriksa mode gambar dan konversi jika grayscale
+        # if image.mode == "L":
+        #     image = image.convert("RGB")
 
         # Resize gambar menjadi ukuran yang diinginkan (sesuaikan dengan ukuran yang digunakan saat pelatihan model)
         image = image.resize((224, 224))
