@@ -73,7 +73,8 @@ def main():
             uploaded_file = st.file_uploader("Upload gambar", type=["jpg", "jpeg", "png"])
             
             if uploaded_file is not None:
-                image = img.load_img(uploaded_file)
+                #membaca gambar
+                image = Image.open(uploaded_file)
             
                 st.image(image, caption="Gambar yang diunggah", width=250)
                 if st.button("Prediksi"):
