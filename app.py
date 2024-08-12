@@ -10,7 +10,10 @@ st.set_page_config(page_title='Pneumonia Detection',
     
 # atur menu untuk app
 menu_data = [
-    {'icon': "far fa-chart-bar", 'label':"Predict"},
+    {'icon': "far fa-chart-bar", 
+     'label':"Predict"},
+    {'icon': "📖",
+     'label':"Kaggle Notebook"},
 ]
 
 over_theme = {'txc_inactive': '#FFFFFF','menu_background':'purple'}
@@ -31,4 +34,12 @@ if menu_id == 'Home':
     
 if menu_id == 'Predict':
     predict_page.main()
+    
+if menu_id=='Kaggle Notebook':
+    st.components.v1.iframe(
+    src="https://www.kaggle.com/embed/sardiirfansyah/cnn-augmentation-transfer-learning-top-score-97?kernelSessionId=161772205",
+    height=800,
+    scrolling=True,
+    width=950
+)
    
