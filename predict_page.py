@@ -15,11 +15,11 @@ def load_and_preprocess_image(image):
     #img_inf = img.load_img(image, target_size=(224, 224))  # Sesuaikan target_size dengan ukuran yang digunakan saat pelatihan
     try:
         # Check image mode and convert to RGB if grayscale
-        if image.mode == "RGB":
-            image = image.convert("L")
+        if image.mode == "L":
+            image = image.convert("RGB")
         img_inf= image.resize((224,224))
         img_array = img.img_to_array(img_inf)
-        st.write(img_array.shape)
+        #st.write(img_array.shape)
         img_array = img_array / 255.0  
         img_array = np.expand_dims(img_array, axis=0)
         # st.write(img_array.shape)
