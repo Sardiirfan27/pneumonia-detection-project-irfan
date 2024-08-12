@@ -14,7 +14,7 @@ interpreter.allocate_tensors()
 def load_and_preprocess_image(image):
     #img_inf = img.load_img(image, target_size=(224, 224))  # Sesuaikan target_size dengan ukuran yang digunakan saat pelatihan
     img_inf= image.resize((224,224))
-    img_array = img.img_to_array(img_inf)
+    img_array = np.asarray(img_inf)
     st.write(img_array.shape)
     img_array = img_array / 255.0  # Normalisasi nilai piksel menjadi [0, 1]
     img_array = np.expand_dims(img_array, axis=0)
@@ -62,7 +62,7 @@ def main():
             uploaded_file = st.file_uploader("Upload gambar", type=["jpg", "jpeg", "png"])
             
             if uploaded_file is not None:
-                image = img.load_img(uploaded_file)
+                image = Image.open(uploaded_file)
                 st.write(image)
             
                 st.image(image, caption="Gambar yang diunggah", width=250)
