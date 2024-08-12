@@ -36,11 +36,7 @@ def load_and_preprocess_image(image):
 def binary_predict_image(interpreter, image, threshold=0.5):
     # Load and preprocess image
     input_data = load_and_preprocess_image(image)
-    if input_data is not None:
-        pass
-    else:
-        print("Preprocessing image failed.")
-    
+
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
 
