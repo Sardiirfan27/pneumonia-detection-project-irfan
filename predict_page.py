@@ -13,13 +13,20 @@ interpreter.allocate_tensors()
 # Function to preprocess image without load_img
 def load_and_preprocess_image(image):
     #img_inf = img.load_img(image, target_size=(224, 224))  # Sesuaikan target_size dengan ukuran yang digunakan saat pelatihan
-    img_inf= image.resize((224,224))
-    img_array = img.img_to_array(img_inf)
-    #st.write(img_array.shape)
-    img_array = img_array / 255.0  # Normalisasi nilai piksel menjadi [0, 1]
-    img_array = np.expand_dims(img_array, axis=0)
-    # st.write(img_array.shape)
-    return img_array
+    try:
+        # Memeriksa mode gambar dan konversi ke RGB jika grayscale
+        if image.mode == "L":
+            image = image.convert("RGB")
+        img_inf= image.resize((224,224))
+        img_array = img.img_to_array(img_inf)
+        #st.write(img_array.shape)
+        img_array = img_array / 255.0  # Normalisasi nilai piksel menjadi [0, 1]
+        img_array = np.expand_dims(img_array, axis=0)
+        # st.write(img_array.shape)
+        return img_array
+    except Exception as e:
+        print("Error:", str(e))
+        return None
 
 # Function to make prediction
 def binary_predict_image(interpreter, image, threshold=0.5):
@@ -63,12 +70,6 @@ def main():
             
             if uploaded_file is not None:
                 image = img.load_img(uploaded_file)
-                if image.mode == "RGB":
-                    st.write("Mode gambar: RGB")
-                elif image.mode == "L":
-                    st.write("Mode gambar: Grayscale")
-                else:
-                    st.write(f"Mode gambar: {image.mode}")
             
                 st.image(image, caption="Gambar yang diunggah", width=250)
                 if st.button("Prediksi"):
