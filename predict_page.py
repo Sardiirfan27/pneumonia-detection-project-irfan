@@ -13,6 +13,8 @@ interpreter.allocate_tensors()
 # Function to preprocess image without load_img
 def load_and_preprocess_image(image):
     #img_inf = img.load_img(image, target_size=(224, 224))  # Sesuaikan target_size dengan ukuran yang digunakan saat pelatihan
+    if image.mode == "L":
+            image = image.convert("RGB")
     img_inf= image.resize((224,224))
     img_array = np.asarray(img_inf)
     st.write(img_array.shape)
